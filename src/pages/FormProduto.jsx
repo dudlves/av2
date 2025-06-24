@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import { Paper, Typography } from "@mui/material";
 import produtoService from "../services/produtoService";
-import FormProduto from "../components/FormProduto";
+import ProdutoForm from "../components/ProdutoForm";
+
 
 export default function FormProdutoPage() {
   const { id } = useParams();
@@ -65,7 +66,7 @@ export default function FormProdutoPage() {
       >
         {id ? "Editar Produto" : "Novo Produto"}
       </Typography>
-      <FormProduto
+      <ProdutoForm
         produto={produto}
         loading={loading}
         onChange={handleChange}
